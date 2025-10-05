@@ -297,9 +297,13 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
+        add "gui/window_icon_nobg.png":
+            xalign 0.5
+            zoom 0.5
+
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action [Start()]
 
         else:
 
@@ -370,7 +374,7 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
+            text "[config.name!u]":
                 style "main_menu_title"
 
             text "[config.version]":
@@ -379,7 +383,8 @@ screen main_menu():
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
-style main_menu_text is gui_text
+style main_menu_text:
+    font "gui/fonts/Minecraft.ttf"
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
